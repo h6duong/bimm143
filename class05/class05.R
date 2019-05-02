@@ -1,4 +1,10 @@
-# Class 5 R graphics
+#' ---
+#' Class 5 R graphics
+#' title: 'Class 6: R functions'
+#' author: "Han Duong"
+#' date: "April 18, 2019"
+#' output: github_document
+#'---
 
 # 2A. Line plot
 weight <- read.table("bimm143_05_rstats/weight_chart.txt", header=TRUE)
