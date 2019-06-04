@@ -2,7 +2,7 @@
 title: 'Class7: R functions and packages'
 author: "Han Duong"
 date: "April 23, 2019"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -93,9 +93,7 @@ both_na(x, y2)
 
 Now let's try the bothna2() function on our different length input vectors
 
-```{r}
-both_na2(x, y2)
-```
+
 
 ```{r}
 which(c(F, F, T, F, T))
