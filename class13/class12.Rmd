@@ -1,0 +1,66 @@
+---
+title: "Class12"
+author: "Han Duong"
+date: "May 9, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(bio3d)
+file.name <- get.pdb("1hsg")
+
+hiv <- read.pdb(file.name)
+
+hiv
+```
+
+>Q1: What is the name of the two non protein resid values in this structure? What does resid correspond to and how would you get a listing of all reside values in this structure? 
+
+
+```{r}
+prot <- atom.select(hiv, "protein", value=TRUE)
+write.pdb(prot,file="1hsg.protein.pdb")
+prot
+```
+```{r}
+lig <- atom.select(hiv, "ligand", value=TRUE)
+write.pdb(lig, file="1hsg.ligand.pdb")
+lig
+```
+
+We are now using AutoDockTools for docking purposes. Add on hydrogen interactions and discover binding site. 
+
+- utilize autodock tools and vina
+
+Now, we can visualize the docks and load it into VMD. 
+
+```{r}
+library (bio3d)
+
+res <- read.pdb("all.pdbqt", multi=TRUE)
+
+write.pdb(res, "results.pdb")
+```
+
+Assess the results quantitatively by calculating the RMSD (root mean square distance) between each of the docking results and the known crystal structure using the bio3d package.
+
+```{r}
+#multi=TRUE, makes it read the file as a multi model file
+res <- read.pdb("all.pdbqt", multi=TRUE)
+ori <- read.pdb("ligand.pdbqt")
+rmsd(ori, res)
+
+```
+
+## Normal Mode analysis for flexibility prediction
+
+```{r}
+pdb <- read.pdb("1hel")
+modes <- nma( pdb )
+m7 <- mktrj(modes, mode=7, file="mode_7.pdb")
+```
+
