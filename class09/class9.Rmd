@@ -2,7 +2,7 @@
 title: "Data Analysis - Breast Cancer"
 author: "Han Duong"
 date: "April 30, 2019"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
