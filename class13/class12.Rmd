@@ -1,8 +1,8 @@
 ---
-title: "Class12"
+title: "Class 12: Drug discovery"
 author: "Han Duong"
 date: "May 9, 2019"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
