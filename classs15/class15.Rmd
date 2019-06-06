@@ -14,6 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 The data for hands-on session comes from GEO entry: GSE37704, which is associated with the following publication. 
 
 ```{r}
+library(BiocManager)
 library(DESeq2)
 metaFile <- "GSE37704_metadata.csv"
 countFile <- "GSE37704_featurecounts.csv"
