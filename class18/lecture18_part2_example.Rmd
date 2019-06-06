@@ -1,3 +1,9 @@
+---
+title: "Class 18: Cancer genomics"
+author: Han Duong
+output: github_document
+---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
