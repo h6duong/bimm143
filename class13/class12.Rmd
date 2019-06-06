@@ -20,9 +20,18 @@ hiv
 
 >Q1: What is the name of the two non protein resid values in this structure? What does resid correspond to and how would you get a listing of all reside values in this structure? 
 
+MK1 and H2O. RESID corresponds to the residue/amino acid. 
 
 ```{r}
+attributes(hiv)
+head(hiv$atom)
+```
+
+
+```{r}
+#extracts only protein associated residue
 prot <- atom.select(hiv, "protein", value=TRUE)
+#creates pdb file of protein only
 write.pdb(prot,file="1hsg.protein.pdb")
 prot
 ```
@@ -54,6 +63,15 @@ res <- read.pdb("all.pdbqt", multi=TRUE)
 ori <- read.pdb("ligand.pdbqt")
 rmsd(ori, res)
 
+```
+The lower the rmsd the better. Anything less than 1 angstroms is the best type structure. 
+
+Determining the RMSD for only non hydrogen atoms
+
+```{r}
+resh <- atom.select(res, "noh")
+orih <- atom.select(ori, "noh")
+rmsd(orih$atom, resh$atom)
 ```
 
 ## Normal Mode analysis for flexibility prediction

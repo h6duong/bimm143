@@ -1,8 +1,8 @@
 ---
-title: "Class 15: P{athway Analysis from RNA-Seq Results"
+title: "Class 15: Pathway Analysis from RNA-Seq Results"
 author: "Han Duong"
 date: "May 21, 2019"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}

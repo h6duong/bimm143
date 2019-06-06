@@ -1,0 +1,48 @@
+---
+title: 'Class 12: NMA and View'
+author: "Han Duong"
+date: "June 5, 2019"
+output: github_document
+always_allow_html: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#install.packages("devtools")
+#devtools::install_bitbucket("Grantlab/bio3d-view")
+#install.packages("rgl")
+```
+
+#Normal Mode Analysis
+A bioinfomatics method to predict the intrinsic dynamics of biomolecules
+
+```{r}
+library(bio3d)
+library(bio3d.view)
+library(rgl)
+pdb <- read.pdb("1hel")
+modes <- nma(pdb)
+m7 <- mktrj(modes, mode=7, file="mode_7.pdb")
+
+view(m7, col=vec2color(rmsf(m7)))
+rglwidget(width=500, height=500)
+```
+
+The created mode_7.pdb file can be viewed on VMD. use "TUBE" and hit play
+
+```{r}
+
+```
+
+
+```{r}
+pdb <- read.pdb("5p21")
+view(pdb)
+view(pdb, "overview", col= "sse")
+view(m7)
+```
+
+

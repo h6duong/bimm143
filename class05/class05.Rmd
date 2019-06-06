@@ -1,23 +1,33 @@
 ---
-title: 'Class 5: R functions'
+title: 'Class 5:Data exploration and visualization in R'
 author: "Han Duong"
-date: "April 16, 2019"
+date: "June 4, 2019"
 output: github_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
 # 2A. Line plot
-weight <- read.table("bimm143_05_rstats/weight_chart.txt", header=TRUE)
+weight <- read.table(("bimm143_05_rstats/weight_chart.txt"), header=TRUE)
 plot(weight$Age, weight$Weight, typ = "o",
      pch=15, cex=1.5, lwd=2, ylim=c(2,10), 
      xlab="Age (months)", ylab="Weight (kg)",
      main="Baby weight with age")
+```
 
+```{r}
 #2B. Bar Plot
 # data, difficult to read, use sep = "\t" to be more readable
 mouse <- read.table("bimm143_05_rstats/feature_counts.txt", sep = "\t", header = TRUE)
 barplot(mouse$Count, horiz =TRUE, names.arg = mouse$Feature, ylab = "", las =1)
 ?barplot
+```
 
+```{r}
 # (las = 1, found in help barplot/par/las)
 par(mar=c(3.1, 11.1, 4.1, 2))
 # mar is for the margins, first number bottom up which leaves a certain number of white space)
@@ -25,7 +35,9 @@ barplot(mouse$Count, horiz = TRUE,
         ylab = " ", names.arg = mouse$Feature, 
         main = "Number of features in the mouse", las = 1, 
         xlim = c(0,80000))
+```
 
+```{r}
 #plot example
 plot(1:5, pch =1:5, cex =1:5)
 
@@ -40,5 +52,5 @@ barplot(counts$Count, names.arg = counts$Sample, las=2,
 #specify by number
 barplot(counts$Count, names.arg = counts$Sample, las=2,
         col = c(1,2))
-
+```
 
