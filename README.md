@@ -5,7 +5,7 @@ This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm1
 - class 05: [R Data exploration and visualization](https://github.com/h6duong/bimm143_classwork_S19/blob/master/class05/class05.md)
 - class 06: [R graphics, generating plots with R](https://github.com/h6duong/bimm143_classwork_S19/blob/master/class06/Class6.md)
 - class 07: [R functions and packages](https://github.com/h6duong/bimm143_classwork_S19/blob/master/class07/class7.md)
-- class 08: [Machine Learning for Bioinformatics]
+- class 08: [Machine Learning for Bioinformatics](https://github.com/h6duong/bimm143_classwork_S19/blob/master/class08/class08.md)
 - class 09: [Data Analysis-Breast Cancer](https://github.com/h6duong/bimm143_classwork_S19/blob/master/class09/class9.md)
 - class 10: [Introduction to Git]
 - class 11: [Structural Bioinformatics](https://github.com/h6duong/bimm143_classwork_S19/blob/master/class11/class11.md)
